@@ -1,0 +1,4 @@
+.cache/
+.sconsign.dblite
+app
+compile_commands.json

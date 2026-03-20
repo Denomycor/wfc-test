@@ -1,0 +1,3 @@
+[submodule "wfc-cpp"]
+	path = wfc-cpp
+	url = git@github.com:Denomycor/wfc-cpp.git
