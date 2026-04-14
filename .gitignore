@@ -3,3 +3,4 @@
 .sconsign.dblite
 app
 compile_commands.json
+*.dat
