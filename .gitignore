@@ -1,5 +1,6 @@
 .cache/
 *.o
+src/*.o
 .sconsign.dblite
 app
 compile_commands.json

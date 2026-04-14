@@ -2,8 +2,24 @@ import os
 
 env = Environment(
     CXX="g++",
-    CXXFLAGS=["-std=c++17", "-O2"],
+    CPPPATH=["wfc-cpp/include"],
+    LINKFLAGS=["-fsanitize=address"],
+    CXXFLAGS=["-std=c++17", "-fsanitize=address", "-g"],
 )
+
+# env.Append(CXXFLAGS=[
+#     "-O0",
+#     "-fno-omit-frame-pointer"
+# ])
+#
+# env.Append(LINKFLAGS=[
+#     "-rdynamic"
+# ])
+#
+# env.Append(LIBS=[
+#     "boost_stacktrace_backtrace",
+#     "dl"
+# ])
 
 # Enable compile_commands.json generation
 env.Tool('compilation_db')
@@ -25,5 +41,5 @@ program = env.Program(
 # Generate compilation database
 compdb = env.CompilationDatabase()
 
-Default(program)
+Default(program, compdb)
 
